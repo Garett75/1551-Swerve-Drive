@@ -16,20 +16,24 @@ import edu.wpi.first.math.util.Units;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-
+    //Mag Encoder conversion factor
     public static final double DEGREES_PER_PULSE = 360.0/4096.0;
+    //Falcon500 internal encoder distance per pulse
     public static final double METERS_PER_PULSE = 0.00002226;
+    //Max speed for robot, set here as .5 as dutyCycle mode is running in SwerveModule
     public static final double MAX_VELOCITY = .5;//4.8;
 
-    //Swerve Module PID Numbers
+    //Swerve Module PID Numbers for drive motor speeds
     public static final double SWERVE_MODULE_DRIVE_P = 0;//1000;
     public static final double SWERVE_MODULE_DRIVE_I = 0;
     public static final double SWERVE_MODULE_DRIVE_D = 0;//25;
+    //Swerve Module PID Numbers for rotation motor positions
     public static final double SWERVE_MODULE_ROTATION_P = 8;
     public static final double SWERVE_MODULE_ROTATION_I = 0.0;//0.2;
     public static final double SWERVE_MODULE_ROTATION_D = 2500;
     public static final double SWERVE_MODULE_ROTATION_I_ZONE = 0;//10/Constants.DEGREES_PER_PULSE;
 
+    //Pid constants for the counter rotation pid controller, to counter robot rotation
     public static final double DRIVE_ROTATION_CONTROLLER_P = 1.1;// 8;
     public static final double DRIVE_ROTATION_CONTROLLER_I = 0;
     public static final double DRIVE_ROTATION_CONTROLLER_D = .001;//0.2;
@@ -38,6 +42,7 @@ public final class Constants {
     public static final double DRIVE_MAX_ANGULAR_ACCEL = 600;
     public static final double DRIVE_MAX_ANGULAR_VELOCITY = 300;
 
+    //Swerve module locations for SwerveDriveKinematics
     public static final Translation2d FRONT_LEFT_OFFSET = new Translation2d(Units.inchesToMeters(21.25/2.0), Units.inchesToMeters(25.0/2.0));
     public static final Translation2d FRONT_RIGHT_OFFSET = new Translation2d(Units.inchesToMeters(21.25/2.0), -Units.inchesToMeters(25.0/2.0));
     public static final Translation2d REAR_LEFT_OFFSET = new Translation2d(-Units.inchesToMeters(21.25/2.0), Units.inchesToMeters(25.0/2.0));
